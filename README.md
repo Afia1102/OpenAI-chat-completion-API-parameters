@@ -9,7 +9,7 @@ Understanding these parameters will help fine-tune API's behaviour to generate b
        messages:[{role:'user',content:'What's the weather today?'}]
 ### 2. **Model**
 - **Purpose**: specifies which version of language model to use(e.g.,GPT-3.5,GPT-4).
-- **Function**: Different models have varying  level of complexity,performance and capabilities.The choice impacts response time,cost and quality.
+- **Functionality**: Different models have varying  level of complexity,performance and capabilities.The choice impacts response time,cost and quality.
 - **Example**: Choosing gpt-4 may provide more accurate and creative answers compared to gpt-3.5 but it may also be slower or more expensive.
 ### 3. **Max Completion Tokens**
 - **Purpose**: limits how long the model's response can be,in terms of tokens(words or parts of words).
@@ -20,4 +20,18 @@ Understanding these parameters will help fine-tune API's behaviour to generate b
 - **Functionality**:You can request multiple responses at once and choose the best one.
 - **Example**:Setting n=3 will generate 3 different responses to the same prompt,allowing you to select the most appropriate one.
 ### 5. **Stream**
-- **Purpose**: 
+- **Purpose**: Determines whether to receive model's response all at once or as it is being generated.
+- **Functionality**:When set to true,the response is delivered incrementally,which is useful for real-time applications.
+- **Example**:With stream=true,you can display text in chat interface as it is being typed,rather than waiting for the entire answer to complete.
+### 6. **Temperature**
+- **Purpose**: Controls the randomness and creativity of the model's responses.
+- **Functionality**:A low value(e.g.,0.1) makes the response more deterministic and predictable,while a high value(e.g.,1.0) increases randomness and creativity.
+- **Example**:if you want a more factual and focused answer,you would set the temperature to 0.2.For more imaginative or diverse response,set it to 0.8.
+### 7. **Top_p**
+- **Purpose**:influences  how many possible tokens the model considers when generating the response.
+- **Functionality**: Limits the model to only considering the smallest set of tokens whose cumulative probability is greater than or equal to 'top_p'(nucleus sampling).This makes response more controlled.
+- **Example**:if top_p is set to 0.9,the model will choose from the most probabale 90% of the next token possibilities,making the response more focused but still flexible.
+### 8. **Tools**
+- **Purpose**:Allows the model to use external tools,such as APIs or code execution.
+- **Functionality**:This extends model's capabilities beyond simple text generation.For example,the model could use a code interpreter to run calculations or a browser tool to access the internet.
+- **Example**:With the tools feature,the model can use a "code interpreter" to calculate math or run python code during a conversation.
