@@ -35,3 +35,9 @@ Understanding these parameters will help fine-tune API's behaviour to generate b
 - **Purpose**:Allows the model to use external tools,such as APIs or code execution.
 - **Functionality**:This extends model's capabilities beyond simple text generation.For example,the model could use a code interpreter to run calculations or a browser tool to access the internet.
 - **Example**:With the tools feature,the model can use a "code interpreter" to calculate math or run python code during a conversation.
+## How these parameters interact?
+The parameters work together to influence the behavior of OpenAI model.
+-**Messages+Temperatue**: The messages define the context,and the temperature controls how creative or deterministic the response will be.
+-**Model+Max_tokens**: The choice of model impacts the quality and depth of the response,while 'max_tokens' restricts the length of the output.
+-**n+Stream**: If you request multiple responses with 'n',setting 'stream=true' will stream those responses incrementally,which will useful for interactive apps.
+-**Top_p+temperature**: Both effect creativity,with 'top_p' focusing the token selection and 'temperature' adjusting the randomness of model's answers.
